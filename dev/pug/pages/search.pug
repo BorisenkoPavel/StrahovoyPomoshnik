@@ -1,0 +1,48 @@
+extends ../template/main
+
+block variables
+  - var title = 'Поиск ДТП'
+  - var pageClass = 'secondary-page'
+block content
+  section.search
+    .container
+      .row
+        .col-lg-6.pt-5
+          h1.section-title.text-left Поиск ДТП
+          p.subtitle.mb-4 Ищем пострадавших для оформления прав на выплату
+          p <span class="b">Авария на дороге...</span> Самый страшный исход дорожно-транспортного происшествия- смерть человека. Если один из членов семьи погиб, родственники вправе рассчитывать на компенсацию
+  section.search-list
+    .container
+      .card-deck
+        .card
+          .embed-responsive.embed-responsive-16by9.card-img-top
+            .embed-responsive-item(style="background: url('img/content/calc3.jpg') no-repeat center/cover")
+          .card-body
+            h5.card-title Название новости
+            p.card-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            p.card-text
+              small.text-muted: a(href="") Читать далее
+        .card
+          .embed-responsive.embed-responsive-16by9.card-img-top
+            .embed-responsive-item(style="background: url('img/content/calc2.jpg') no-repeat center/cover")
+          .card-body
+            h5.card-title Название новости
+            p.card-text This card has supporting text below as a natural lead-in to additional content.
+            p.card-text
+              small.text-muted: a(href="") Читать далее
+        .card
+          .embed-responsive.embed-responsive-16by9.card-img-top
+            .embed-responsive-item(style="background: url('img/content/calc3.jpg') no-repeat center/cover")
+          .card-body
+            h5.card-title Название новости
+            p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+            p.card-text
+              small.text-muted: a(href="") Читать далее
+
+  section.leading
+    .container
+      h1.section-title.text-left Страховой помощник – гарант получения страховых выплат
+      p Преимущества работы с нами:
+      ul.accent-block__list
+        li Оформление выплат  до установления виновника аварии, за исключением пострадавших  водителей
+        li Оперативное  оформление документов и урегулирование спорных ситуаций в страховой организация

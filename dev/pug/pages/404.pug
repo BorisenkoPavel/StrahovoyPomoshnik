@@ -1,0 +1,16 @@
+extends ../template/main
+
+block variables
+  - var title = '404'
+  - var pageClass = 'secondary-page'
+block content
+  .container.h-100
+    .row.h-100
+      .col-lg-6.d-flex.flex-column.justify-content-center
+        h1 Страница не найдена (404)
+        p Страница на которую Вы хотели перейти, не найдена. возможно, введен некорректный адрес или страница была увдалена. 
+          a.decoration-link(href="") Подробрнее
+        a.decoration-link.d-block.pb-2(href="") Вернуться на предыдущую страницу
+        a.decoration-link.d-block.pb-2(href="") Перейти на главную страницу
+        a.decoration-link.d-block.pb-2(href="") На портал службы поддержки
+      .col-6.bg-404(style="background: url('img/general/logo.svg') no-repeat center/contain")

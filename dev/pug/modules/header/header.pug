@@ -1,0 +1,59 @@
+header.header#header_nav
+	.container.d-flex.justify-content-between.align-items-center
+		.header__left-block.d-flex
+			a.logo(href='/').mr-lg-3
+				img(src="img/general/logo100500.svg", alt="").mw-100.h-100
+			label.nav-toggle.nav-toggle--mobile.d-lg-none(for='nav-toggle', onclick='')
+					.hamburger.hamburger--arrow
+						span.hamburger-box
+							span.hamburger-inner
+		.list-container.m-0.text-small.align-items-center.d-none.d-lg-flex
+			.container
+				ul.d-flex.list.list--nav
+					li.link.link--nav
+						a Услуги
+						.list--container
+							ul.list.list--nav.list--sublist
+								li.py-2: a Консультация
+								li.py-2: a Договор
+								li.py-2: a Выплата
+								li.py-2: a Преимущества
+								li.py-2: a Постоплата
+					li.link.link--nav
+						a Убыток
+						.list--container
+							ul.list.list--nav.list--sublist
+								li.py-2: a Здоровье
+								li.py-2: a Жизнь
+								li.py-2: a Автомобиль
+								li.py-2: a Прочее имущество
+					li.link.link--nav
+						a Помощь
+						.list--container
+							ul.list.list--nav.list--sublist
+								li.py-2: a Проверить расчет
+								li.py-2: a Вызвать страхового помощника
+								li.py-2: a Поиск потерпевших
+					li.link.link--nav
+						a Документы
+						.list--container
+							ul.list.list--nav.list--sublist
+								li.py-2: a Заявление 
+								li.py-2: a Претензия 
+								li.py-2: a Обращение 
+								li.py-2: a Иск  
+					li.link.link--nav
+						a О компании
+						.list--container
+							ul.list.list--nav.list--sublist
+								li.py-2: a Почему нам доверяют
+								li.py-2: a Отзывы
+		.header__right-block.d-none.d-lg-flex.align-items-center
+			a.phone.d-lg-flex.align-items-center.d-none(href='tel:+78002229575')
+				.phone-icon.mr-2: +icon('phone')
+				b 8 800 222 95 75
+			.fas.fa-user.mr-2.ml-4.text-accent
+			a.login.mr-2(href="#")  Войти
+			span |
+			a.login.ml-2(href="#")  Регистрация
+

@@ -1,0 +1,339 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(xxl)
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.banner-circle
+		margin: 0
+		width: 27vw
+		height: 27vw
+	.banner
+		h1
+			br
+				display: none
+	.link.link--nav 
+		padding: .4375rem 0.6rem
+	.list--nav.list--sublist
+		padding: .6rem
+	.calculate-content .swiper-slide
+		height: 47rem
+// ≥992px
++media-breakpoint-down(md)
+	header
+		height: auto
+		box-shadow: 0 2px 9px rgba(0,0,0, .2)
+	.header__left-block.d-flex
+		justify-content: space-between
+	.link.link--nav 
+		padding: .4375rem 1rem
+	.list--nav.list--sublist
+		padding: 1rem
+	header
+		.logo
+			padding: 15px 0
+	.special-title, .info-title
+		font-size: 1rem
+	.special-list
+		grid-template-columns: 1fr 1fr 1fr
+	.fixed-logo
+		display: none
+	section.calculate
+		&:before
+			width: 100%
+	.calculate-content
+		.swiper-slide
+			height: 44rem
+	.round-container
+		width: auto
+		height: auto
+		background-color: transparent
+		dl
+			color: $text
+	.banner-circle
+		width: 50vw
+		height: 50vw
+	.section-title
+		text-align: left!important
+		&:before
+			margin-left: 0!important
+	.accent-block.accent-block--translated
+		left: 0
+		top: 0
+		width: 100%
+	.copyright--footer
+		flex-direction: column
+		text-align: center
+	.header-container
+		flex-wrap: wrap
+	.header__left-block
+		flex: 0 0 100%
+	.list-container
+		position: relative
+		flex: 0 0 auto
+		border-radius: 0
+		padding-left: 15px
+		height: 50px
+	.header__right-block
+		color: #fff
+		background-color: $accent
+		flex: 1 1
+		height: 50px
+		justify-content: flex-end
+		padding-right: 15px
+	header
+		padding: 0
+	.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+		height: 2px
+		width: 35px!important
+	.hamburger-inner::after
+		bottom: -8px
+	.hamburger-inner::before
+		top: -8px
+	.nav-toggle.nav-toggle--mobile
+		align-items: center
+		display: flex
+	.nav-toggle.nav-toggle--mobile
+		top: 2px
+	[id=nav-toggle]:checked~.nav>.nav-toggle .hamburger--arrow .hamburger-inner::before
+		transform: translate3d(-11px,7px,0) rotate(-45deg) scale(.5,1)
+		top: -13px
+	[id=nav-toggle]:checked~.nav>.nav-toggle .hamburger--arrow .hamburger-inner::after
+		transform: translate3d(-11px,7px,0) rotate(45deg) scale(.5,1)
+		bottom: 1px
+	.content
+		display: flex
+		flex-direction: column
+	.review-name_container
+		width: auto
+	.round-animation
+		display: none
+	.special-list
+		grid-template-columns: 1fr 1fr
+	.info-list__container:first-child
+		.info-item
+			&:before
+				display: block
+	.info-list__container:last-child
+		.info-item
+			&:after
+				display: block
+	.swiper-pagination-bullet.swiper-pagination-bullet-active
+		width: 14px
+		height: 14px
+	.swiper-pagination-bullet
+		width: 10px
+		height: 10px
+	.banner .swiper-slide
+		padding-top: 3rem
+		padding-bottom: 5rem
+// ≥768px
++media-breakpoint-down(sm)
+	
+// ≥576px
++media-breakpoint-down(xs)
+	.banner
+    padding: 0!important
+	.calculate-content
+		.swiper-slide
+			height: auto
+	.info-list__container		
+		margin-bottom: 1.5rem!important
+	.info-item.info-item--step	
+		border: 1px solid $accent!important
+		// background-color: rgba(62,181,241, .2)
+		.info-logo
+			display: none
+		&:before, &:after
+			display: none!important
+		.right-arrow-container
+			right: -15px!important
+			left: auto!important
+			top: 0!important
+			bottom: 0!important
+		.info-title
+			margin-bottom: 0!important
+	// 	padding: 0!important
+	// 	color: $accent
+	// 	&:hover
+	// 		background-color: transparent
+	// 		color: $accent
+	// 	&:before, &:after
+	// 		display: none!important
+
+	// 	.info-title
+	// 		text-align: left
+	// 		position: relative
+	// 		padding-left: 1rem
+	// 		&:before
+	// 			content: ''
+	// 			position: absolute
+	// 			content: '\2022	'
+	// 			font-size: 1.25rem
+	// 			line-height: 0
+	// 			left: 0
+	// 			top: 50%
+	// 			transform: translatey(-50%)
+
+	.info-desc
+		display: none
+	.banner-circle
+		width: 60vw
+		height: 60vw
+	.calculate-content
+		.swiper-slide
+			overflow: hidden
+	.circle-step__desc
+		font-size: 0.8125rem!important
+	.swiper-button-prev.reviews-swiper-prev, .swiper-button-next.reviews-swiper-next
+		display: none
+	.banner-circle
+		width: 65vw
+		height: 65vw
+	.copyright--footer
+		font-size: 0.875rem
+	.form-block__x-container
+		flex-direction: column
+	.header > .container
+		justify-content: flex-end!important
+	[id='nav-toggle']:checked ~ .nav > .nav-toggle
+		left: 15px
+	.callback-btn
+		width: 90px
+		height: 90px
+	.credit-content
+		padding-bottom: 3rem
+	.secondary-page
+		.about
+			padding-bottom: 0
+			margin-bottom: 0
+	.special-item:hover 
+		& > .special-title
+			color: $text
+		& > .special-logo
+		.special-icon
+    	fill: $accent
+		.special-item.special-item--inner
+			.special-icon
+				fill: #fff
+	.special
+		z-index: 300
+	.special-item
+		transform: none!important
+		position: static
+		&:hover 
+			.special-item.special-item--inner
+				transform: scale(1)!important
+				transition: .6s ease!important
+			.special-wrapper
+				transform: scale(1)
+				transition: .6s ease!important
+
+		.special-item.special-item--inner
+			top: calc(50% - 100px)
+			left: 10%
+			right: 10%
+			height: 150px
+			bottom: auto
+			transform: scale(0) !important
+			transform-origin: bottom
+			position: fixed
+			z-index: 700
+		.special-wrapper
+			position: fixed
+			left: 10%
+			bottom: auto
+			right: 10%
+			top: calc(50% + 50px)
+			width: auto
+			transform: scale(0)
+			transform-origin: top
+			z-index: 700
+			.special-desc
+				transform: none
+	.circle-step__desc
+		top: auto
+		bottom: 100%
+	.container.mobile-swiper-container
+		.swiper-slide
+			padding-right: 15px
+			padding-left: 15px
+		.embed-responsive
+			right: -15px
+			left: -15px
+			width: calc(100% + 30px)
+		.embed-responsive-item
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 
+				width: 100%
+				height: 100%
+				background: linear-gradient(to top, white 10%, transparent)
+	section.calculate
+		background: transparent
+	h1.section-title
+		&:before
+			display: none
+		margin-bottom: 1rem
+	section.calculate
+		.swiper-slide
+			background: transparent!important
+
+	.phone-block.text-big
+		font-size: .9rem
+	
+	.banner
+		.swiper-slide:first-child, .swiper-slide:last-child
+			background-size: cover
+			background-position: center
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-color: rgba(255,255,255,.4)
+				z-index: -1
+	.banner::after
+		display: none
+/*==========  mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+	section.calculate
+		.swiper-slide
+			background-size: cover
+			background-position: center top
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				width: 100%
+				background-color: rgba(255,255,255, 0.8)
+				z-index: 50
+				pointer-events: none
+	.banner
+		.swiper-slide
+			&:before
+				display: none
+			background: transparent!important
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+	section.calculate
+		.swiper-slide
+			&:before
+				width: 58.3333%
+// ≤1200px
++media-breakpoint-up(xl)

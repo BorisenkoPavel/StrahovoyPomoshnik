@@ -1,0 +1,641 @@
+.nav
+	/*  ширна произвольная, не стесняйтесь экспериментировать */
+	width: 100%
+	/* фиксируем и выставляем высоту панели на максимум */
+	height: 100%
+	position: fixed
+	top: 0
+	bottom: 0
+	margin: 0
+	/* сдвигаем (прячем) панель относительно левого края страницы */
+	left: -100%
+	/* внутренние отступы */
+	padding: 15px 20px
+	/* плавный переход смещения панели */
+	transition: left 0.3s
+	/* определяем цвет фона панели */
+	background: #fff
+	/* поверх других элементов */
+	z-index: 2000
+	color: $text
+.nav-toggle.hidden
+	transform: translateY(-200%)
+.nav-toggle.nav-toggle--mobile
+	position: relative
+	top: 0
+	left: 0
+	margin-bottom: 0
+	.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+		background-color: $text
+.nav-toggle
+	position: absolute
+	left: calc(101% + (100% - 1140px) / 2)
+	top: 34px
+	padding: 0.5em 0
+	color: #dadada
+	cursor: pointer
+	font-size: 1.2em
+	line-height: 1
+	z-index: 499
+	transition: .3s ease
+
+/* цвет текста при наведении */
+
+.nav-toggle:hover 
+	color: #f4f4f4
+
+
+// Скрытый чекбокс (флажок)
+// невидим и недоступен :)
+// имя селектора атрибут флажка
+
+
+[id='nav-toggle']
+	position: absolute
+	display: none
+
+//
+// изменение положения переключателя
+// при просмотре на мобильных устройствах
+// когда навигация раскрыта, распологаем внутри панели
+//
+
+[id='nav-toggle']:checked ~ .nav > .nav-toggle
+	left: 2%
+	top: 20px
+
+/**
+ * Когда флажок установлен, открывается панель
+ * используем псевдокласс:checked
+ */
+
+[id='nav-toggle']:checked ~ .nav 
+	left: 0%
+	// box-shadow: 4px 0px 20px 0px rgba(0,0,0, 0.5)
+	overflow-y: auto
+
+// 
+// смещение контента страницы
+// на размер ширины панели,
+// фишка необязательная, на любителя
+//
+
+[id='nav-toggle']:checked ~ main 
+	// transform: translateX(320px)
+
+// 
+// изменение символа переключателя,
+// привычный крестик (MULTIPLICATION X), 
+// вы можете испльзовать любой другой значок
+//
+
+[id='nav-toggle']:checked ~ .nav > .nav-toggle
+	.hamburger--arrow .hamburger-inner::before
+		transform: translate3d(-16px, 7px, 0) rotate(-45deg) scale(0.5, 1)
+
+	.hamburger--arrow .hamburger-inner::after
+		transform: translate3d(-16px, -7px, 0) rotate(45deg) scale(0.5, 1)
+
+
+
+@media screen and (min-width: 320px)
+	html,
+	body
+		margin: 0
+
+@media screen and (max-width: 320px)
+	html,
+	body 
+		margin: 0
+		.nav 
+			width: 100%
+			box-shadow: none
+
+//
+// Формируем стиль заголовка (логотип) панели 
+//
+
+
+// [id='nav-toggle']:checked ~ .nav h2
+// 	opacity: 1
+// 	transform: scale(1, 1)
+// 	-ms-transform: scale(1, 1)
+// 	-moz-transform: scale(1, 1)
+// 	-webkit-transform: scale(1, 1)
+
+// /**
+//  * формируем непосредственно само меню
+//  * используем неупорядоченный список для пунктов меню
+//  * прикрутим трансфомации и плавные переходы
+//  */
+.nav
+	.addres-list
+		margin-top: 1.5rem
+		svg 
+			position: absolute
+			left: 0
+			bottom: 50%
+			transform: translatey(40%)
+			path
+				transition: .3s ease
+		li
+			position: relative
+			padding-left: 0.9375rem
+			svg path
+				fill: $text
+			&:hover
+				a
+					color: rgba(0,0,0, .5)
+				svg path
+					fill: rgba(0,0,0, .5)
+.nav-menu
+	display: block
+	margin: 0
+	padding: 0
+	list-style: none
+	padding-top: 3.4375rem
+.nav-menu.h1-underline
+	&:before
+		bottom: -2.1875rem
+
+.nav-menu > li 
+	line-height: 2.5
+	opacity: 0
+	transform: translateX(-50%)
+	transition: opacity .5s .1s, transform .5s .1s
+	font-size: 1.475rem
+	line-height: 2
+	transition-delay: 0
+
+
+[id='nav-toggle']:checked ~ .nav .nav-menu > li 
+	opacity: 1
+	transform: translateX(0)
+	transition: 0
+
+[id='nav-toggle']:checked ~ .nav
+	.video-block, .video-subtitle, .addres-list, .copyright, .social
+		transform: translate(0)
+		opacity: 1
+		transition-delay: .3s
+	.video-subtitle
+		transition-delay: .6s
+	.addres-list
+		transition-delay: .6s
+	.copyright
+		transition-delay: .9s
+	.social
+		transition-delay: .6s
+/* определяем интервалы появления пунктов меню */
+.addres-list, .copyright, .social
+	transform: translate(-300px)
+	transition: .7s ease
+	opacity: 0
+	svg path
+		fill: $text
+.nav-menu > li:nth-child(2) 
+	transition: opacity .5s .2s, transform .5s .2s
+
+
+.nav-menu > li:nth-child(3) 
+	transition: opacity .5s .3s, transform .5s .3s
+
+.nav-menu > li:nth-child(4) 
+	transition: opacity .5s .4s, transform .5s .4s
+
+.nav-menu > li:nth-child(5) 
+	transition: opacity .5s .5s, transform .5s .5s
+
+.nav-menu > li:nth-child(6) 
+	transition: opacity .5s .6s, transform .5s .6s
+
+.nav-menu > li:nth-child(7) 
+	transition: opacity .5s .7s, transform .5s .7s
+
+
+/**
+ * оформление ссылок пунктов меню
+ */
+
+.nav-submenu 
+	display: none
+	& > li
+		font-size: .7em
+.nav-menu > li > a
+	display: inline-block
+	position: relative
+	padding: 0
+	font-weight: 300
+	font-size: 1.2em
+	width: 100%
+	color: inherit
+	text-decoration: none
+	/* плавный переход */
+	transition: color .5s ease, padding .5s ease
+
+
+
+/**
+ * состояние ссылок меню при наведении
+ */
+
+.nav-menu > li > a:hover,
+.nav-menu > li> a:focus
+	color: rgba(0,0,0, .5)
+	padding-left: 15px
+
+
+
+/**
+ * линия подчеркивания ссылок меню
+ */
+
+// .nav-menu > li > a:before
+// 	content: ''
+// 	display: block
+// 	position: absolute
+// 	right: 0
+// 	bottom: 0
+// 	height: 1px
+// 	width: 100%
+// 	transition: width 0s ease
+
+
+// .nav-menu > li > a:after 
+// 	content: ''
+// 	display: block
+// 	position: absolute
+// 	left: 0
+// 	bottom: 0
+// 	height: 1px
+// 	width: 100%
+// 	background: #3bc1a0
+// 	transition: width .5s ease
+
+
+
+/**
+ * анимируем линию подчеркивания 
+ * ссылок при наведении
+ */
+
+// .nav-menu > li > a:hover:before
+// 	width: 0%
+// 	background: #3bc1a0
+// 	transition: width .5s ease
+
+
+// .nav-menu > li > a:hover:after 
+// 	width: 0%
+// 	background: transparent
+// 	transition: width 0s ease
+
+
+
+// /* фон затемнения на основной контент 
+//  * при этом элементы блокируютя
+//  * спорная такая фича, если оно вам надо
+//  * просто раскомментируйте
+// */
+
+/*
+// .mask-content 
+// 	display: block
+// 	position: fixed
+// 	top: 0
+// 	left: 0
+// 	z-index: 1000
+// 	width: 100%
+// 	height: 100%
+// 	background-color: rgba(0, 0, 0, 0.4)
+// 	visibility: hidden
+// 	opacity: 0
+
+
+// [id='nav-toggle']:checked ~ .mask-content 
+//     visibility: visible
+//     opacity: 1
+//     -webkit-transition: opacity .5s, visibility .5s
+//     transition: opacity .5s, visibility .5s
+// 
+// */
+.hamburger
+	display: inline-block
+	cursor: pointer
+	transition-property: opacity, filter
+	transition-duration: 0.15s
+	transition-timing-function: linear
+	font: inherit
+	color: inherit
+	text-transform: none
+	background-color: transparent
+	border: 0
+	margin: 0
+	overflow: visible
+.hamburger:hover
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+		background-color: #fff
+[id='nav-toggle']:checked ~ .nav > .nav-toggle .hamburger:hover 
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+		background-color: #fff
+[id='nav-toggle']:checked ~ .nav > .nav-toggle .hamburger .hamburger-inner,
+[id='nav-toggle']:checked ~ .nav > .nav-toggle .hamburger .hamburger-inner::before,
+[id='nav-toggle']:checked ~ .nav > .nav-toggle .hamburger .hamburger-inner::after 
+	background-color: $text
+
+.hamburger-box 
+	width: 35px
+	height: 24px
+	display: inline-block
+	position: relative
+
+.hamburger-inner 
+	display: block
+	top: 50%
+	margin-top: -2px
+.hamburger.active
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after 
+		background-color: $text
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after 
+	width: 48px
+	height: 3px
+	background-color: $text
+	border-radius: 3px
+	position: absolute
+	transition-property: transform
+	transition-duration: 0.15s
+	transition-timing-function: ease
+.hamburger-inner
+	width: 40px
+.hamburger-inner::before, .hamburger-inner::after 
+	content: ""
+	display: block
+.hamburger-inner::before
+	top: -15px
+.hamburger-inner::after
+	bottom: -15px
+
+
+
+
+
+.form-block
+	&__x-container
+		display: flex
+		label
+			flex: 1 1 50%
+		.form-block__input
+			width: 100%
+	&__input-title
+		margin-bottom: 0.25rem
+	&__textarea
+		width: 100%
+		outline: none
+		padding-top: 0.5rem
+		overflow: hidden
+	&__input
+		position: relative
+		display: flex
+		align-items: center
+	&__input, &__textarea
+		height: 2.5rem
+		padding-left: 0.9375rem
+		background-color: #fff
+		border-radius: 5px
+		border: 1px solid #DFF5FF
+		transition: .3s
+		&:focus
+			border: 1px solid $accent
+
+
+	&__addfile-link
+		&:hover
+			.form-block__icon
+				fill: $accent
+		input
+			position: absolute
+			opacity: 0
+			pointer-events: none
+		.form-block__input-title
+			cursor: pointer
+		.form-block__icon
+			width: 15px
+			height: 15px
+			margin-right: .5rem
+			transition: .3s ease
+.text-underline--dotted 	
+	border-bottom: 1px dotted #000
+	transition: .3s ease
+	cursor: pointer
+	&:hover
+		color: $accent
+		border-bottom: 1px dotted $accent
+
+.round-container
+	background-color: rgba(62, 181, 241, 0.9)
+	border-radius: 50%
+	width: 34rem
+	height: 34rem
+	position: relative
+dl.list-type-circle
+	list-style-type: circle
+	dd
+		padding-left: 1rem
+		position: relative
+		&:before
+			position: absolute
+			content: '\2022	'
+			font-size: 1.25rem
+			line-height: 0
+			left: 0px
+			top: 50%
+			transform: translatey(-50%)
+		a.link
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				height: 2px
+				width: 0
+				bottom: -3px
+				transition: .5s ease
+				background-color: #fff
+		&:hover
+			a.link
+				&:before
+					width: 100%
+				
+
+
+
+.round-animation
+	position: absolute
+	background-image: url(../img/general/ellipse.png)
+	background-repeat: no-repeat
+	background-size: contain
+	top: 50%
+	left: 45%
+	width: 100%
+	height: 100%
+	animation: round 120s infinite linear
+.round-animation--call
+	left: 50%
+	width: 450px
+	height: 450px
+	top: 45%
+.btn.btn-secondary
+	padding: .5rem 1.5rem
+	background-color: $accent
+.btn
+	padding: 0.875rem 1.75rem
+	border-radius: 5px
+	text-transform: uppercase
+	background-color: $accent
+	display: inline-flex
+	font-weight: bold
+	color: #fff
+	align-items: center
+	cursor: pointer
+	line-height: 1.2
+	border: 2px solid $accent
+	&:hover
+		text-decoration: none
+		color: $accent
+		background-color: #fff
+		.phone-icon
+			svg
+				fill: $accent
+	.phone-icon
+		background-color: #fff
+		svg
+			font-size: .8rem
+			fill: $accent
+.btn.btn--reverse
+	background-color: #fff
+	color: $accent
+	&:hover
+		background-color: $accent
+		color: #fff
+
+.overlay
+	width: 100%
+	min-height: 100vh
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	padding: 40px
+	position: fixed
+	top: 0
+	left: 0
+	background: rgba(black, 0.75)
+	opacity: 0
+	pointer-events: none
+	transition: 0.35s ease-in-out
+	max-height: 100vh
+	overflow-y: auto
+	z-index: 1000
+	&.open
+		opacity: 1
+		pointer-events: inherit
+
+
+
+// 	.modal
+// 		background: white
+// 		text-align: center
+// 		padding: 3.75rem 2.5rem 
+// 		box-shadow: 0px 1px 10px rgba(white, 0.25)
+// 		opacity: 0
+// 		pointer-events: none
+// 		transition: 0.35s ease-in-out
+// 		max-height: 100vh
+// 		overflow-y: auto
+// 		min-width: 20rem
+// 		width: 100%
+// 		max-width: 35rem
+// 		border-radius: 10px
+// 		position: relative
+// 		.form-block__x-container
+// 			flex-direction: column
+// 			label
+// 				flex: 1 1 100%
+// 		&.open
+// 			opacity: 1
+// 			pointer-events: inherit
+// 			.modal-content
+// 				transform: translate(0, -0px)
+// 				opacity: 1
+// 		.modal-content
+// 			transform: translate(0, -10px)
+// 			opacity: 0
+// 			transition: .35s ease-in-out
+// 		.title
+// 			margin-top: 0
+button.close-modal
+	float: right
+	display: inline-block
+	width: 30px
+	height: 30px
+	right: 20px
+	top: 20px
+	border: none
+	background-color: transparent
+	outline: none
+	font-size: 24px
+	
+.md-modal
+	top: 0
+	bottom: 0
+	right: 0
+	left: auto
+	transform: none
+.md-content
+	height: 100%
+	overflow-y: auto
+	// box-shadow: -6px 0px 9px rgba(0,0,0,.2)
+
+.img-embed
+	object-fit: cover
+.accent-block.accent-block--translated
+	position: relative
+	left: -20%
+	top: 15%
+	width: 120%
+.accent-block
+	background-color: #F2F6F6
+	padding: 1.875rem 2.5rem
+.accent-block__list
+	padding: 0
+	margin: 0
+	list-style-type: none
+	li
+		position: relative
+		padding-left: 1rem
+		margin-bottom: .8rem
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			background-color: $accent
+			width: 5px
+			height: 5px
+			border-radius: 50%
+			top: .5rem
+.swiper-pagination.calculate-pagination
+	justify-content: flex-start
+	z-index: 100
+	bottom: 1.5rem
+
+.card
+	height: auto!important
+img.crumb
+	width: 20px
+	vertical-align: middle
+	margin-right: 5px
+.crumbs
+	i
+		margin: 0 5px
+		font-size: 2px
+		vertical-align: middle

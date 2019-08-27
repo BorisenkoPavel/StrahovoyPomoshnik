@@ -1,0 +1,67 @@
+#modal-1.md-modal.md-effect-2.md-effect-1
+	.md-content
+		h3.position-relative
+			| Иск в суд
+			button.md-close.close-modal &#10006;
+		.text 
+			p.subtitle: .b 1. Обратитесь в страховую компанию лично или через страхового помощника
+			p Заявление в страховую компанию составляется в письменной форме. Наши специалисты составят заявление исходя из ситуации, которая с вами произошла. Мы не используем бланков страховой компании, так как они содержат минимум информации, что в интересах страховщика. При написании заявления мы установим: относится ли данные ситуации к страховому случаю, тщательно проверим информацию, подробно опишем происшествие, сведения о пострадавших лицах; сведения о полученных травмах и возможных осложнениях, поврежденном имуществе. Вручим заявление страховщику, ответим на запросы, проследим срок рассмотрения.
+.md-overlay
+
+#modal-2.md-modal.md-effect-2.md-effect-1
+	.md-content
+		h3.position-relative
+			| Наш специалист свяжется с вами
+			button.md-close.close-modal &#10006;
+		.text 
+			.form-block
+				.form-block__x-container.mb-3
+					label.mr-0.mr-sm-4
+						div.form-block__input-title Ваше имя
+						input(type="text").form-block__input
+					label
+						div.form-block__input-title Телефон
+						input(type="text").form-block__input
+				.form-block__x-container.mb-3
+					label.mr-0.mr-sm-4
+						div.form-block__input-title Дата ДТП
+						input(type="text").form-block__input
+					label
+						div.form-block__input-title Сумма выплаты (₽)
+						input(type="text").form-block__input
+				label.w-100.mb-3
+					div.form-block__input-title Опишите травму
+					textarea(rows="4").form-block__textarea
+				label.w-100.form-block__addfile-link.mb-3
+					div.form-block__input-title
+						+icon('skrepka','form-block__icon')
+						span.text-underline--dotted Приложите медицинские документы
+					input(type="file")
+				span.text-underline--dotted Нажимая на кнопку, вы соглашаетесь на обработку персональных данных<br>
+				.btn.mt-4 Проверить
+.md-overlay.md-close#overlay
+.preloader
+	.pulse
+
+//- #modal1.modal
+//- 	button.close-modal &#10006;
+//- 	.modal-content
+//- 		h1.title SOS ДТП
+//- 		.form-block.mb-4
+//- 			.form-block__x-container.mb-3
+//- 				label.w-100.mr-0.mr-sm-4
+//- 					div.form-block__input-title.text-left Ваше имя
+//- 					input(type="text").form-block__input
+//- 				label.w-100
+//- 					div.form-block__input-title.text-left Телефон
+//- 					input(type="text").form-block__input
+//- 			label.w-100.mb-3
+//- 				div.form-block__input-title.text-left Комментарий
+//- 				textarea(rows="3").form-block__textarea
+//- 		a.btn.btn-secondary.close-modal(data-modal='#modal1', href='#') отправить заявку
+//- #modal2.modal
+//- 	button.close-modal &#10006;
+//- 	.modal-content
+//- 		h1.title Заявление в страховую компанию
+//- 		.text Заявление в страховую компанию составляется в письменной форме. Наши специалисты составят заявление исходя из ситуации, которая с вами произошла. Мы не используем бланков страховой компании, так как они содержат минимум информации, что в интересах страховщика. При написании заявления мы установим: относится ли данные ситуации к страховому случаю, тщательно проверим информацию, подробно опишем происшествие, сведения о пострадавших лицах; сведения о полученных травмах и возможных осложнениях, поврежденном имуществе. Вручим заявление страховщику, ответим на запросы, проследим срок рассмотрения.
+
