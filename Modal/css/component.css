@@ -41,7 +41,7 @@ perspective effects (not including the modals and the overlay).
 	visibility: visible;
 }
 
-.md-overlay {
+.md-overlay, .special-overlay {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -56,7 +56,7 @@ perspective effects (not including the modals and the overlay).
 	transition: all 0.3s;
 }
 
-.md-show ~ .md-overlay {
+.md-overlay.md-overlay--show {
 	opacity: 1;
 	visibility: visible;
 }
@@ -722,8 +722,4 @@ perspective effects (not including the modals and the overlay).
 	-webkit-transition: all 0.5s 0.1s;
 	-moz-transition: all 0.5s 0.1s;
 	transition: all 0.5s 0.1s;
-}
-
-@media screen and (max-width: 32em) {
-	body { font-size: 75%; }
 }

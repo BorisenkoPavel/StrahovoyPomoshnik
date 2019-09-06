@@ -17,6 +17,7 @@ var gulp                    = require('gulp'),
     svgmin                  = require('gulp-svgmin'),
     cheerio                 = require('gulp-cheerio'),
     replace                 = require('gulp-replace'),
+    sourcemaps                 = require('gulp-sourcemaps'),
     // imagemin                = require('gulp-imagemin'),
     // imageminJpegRecompress  = require('imagemin-jpeg-recompress'),
     // pngquant                = require('imagemin-pngquant'),
@@ -50,16 +51,18 @@ gulp.task('browser-sync', function() {
 
 gulp.task('styles', function() {
   return gulp.src('dev/scss/**/*.'+syntax+'')
+  .pipe(sourcemaps.init())
   .pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
   .pipe(rename({ suffix: '.min', prefix : '' }))
   .pipe(autoprefixer(['last 15 versions']))
   .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+  .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('app/css'))
   .pipe(browserSync.stream())
 });
-
 gulp.task('scripts', function() {
   return gulp.src([
+    // .pipe(sourcemaps.init())
     // 'node_modules/bootstrap/js/dist/.js',
     // 'Modal/js/classie.js',
     // 'Modal/js/modalEffects.js',
@@ -68,8 +71,10 @@ gulp.task('scripts', function() {
     'node_modules/svg4everybody/dist/svg4everybody.min.js',
     'dev/js/common.js', // Always at the end
     ])
+  .pipe(sourcemaps.init())
   .pipe(concat('scripts.min.js'))
   .pipe(terser()) // Mifify js (opt.)
+  .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('app/js'))
   .pipe(browserSync.reload({ stream: true }))
 });

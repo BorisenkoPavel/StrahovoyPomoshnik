@@ -84,11 +84,13 @@ block content
 		.container
 			h1.section-title Мы разработали специальное предложение — помощь в&nbsp;оформлении выплат
 			.special-list
+				.special-overlay
 				.special-item(data-aos-once="true" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200")
 					.special-logo
 						+icon('smartphone','special-icon')
 					.special-title.text-big.b Вызов страхового помощника
 					.special-item.special-item--inner
+						.special__close-btn.d-inline-block.d-lg-none ✖
 						.special-logo
 							+icon('smartphone','special-icon')
 						.special-title.text-big.b Вызов страхового помощника
@@ -100,6 +102,7 @@ block content
 						+icon('dialogue','special-icon')
 					.special-title.text-big.b Разъяснение прав
 					.special-item.special-item--inner
+						.special__close-btn.d-inline-block.d-lg-none ✖
 						.special-logo
 							+icon('dialogue','special-icon')
 						.special-title.text-big.b Разъяснение прав
@@ -111,6 +114,7 @@ block content
 						+icon('contract','special-icon')
 					.special-title.text-big.b Заключение договора
 					.special-item.special-item--inner
+						.special__close-btn.d-inline-block.d-lg-none ✖
 						.special-logo
 							+icon('contract','special-icon')
 						.special-title.text-big.b Заключение договора
@@ -122,6 +126,7 @@ block content
 						+icon('money','special-icon')
 					.special-title.text-big.b Получение выплаты
 					.special-item.special-item--inner
+						.special__close-btn.d-inline-block.d-lg-none ✖
 						.special-logo
 							+icon('money','special-icon')
 						.special-title.text-big.b Получение выплаты
@@ -132,6 +137,7 @@ block content
 						+icon('protection','special-icon')
 					.special-title.text-big.b Постоплата
 					.special-item.special-item--inner
+						.special__close-btn.d-inline-block.d-lg-none ✖
 						.special-logo
 							+icon('protection','special-icon')
 						.special-title.text-big.b Постоплата
@@ -142,6 +148,7 @@ block content
 						+icon('advantages','special-icon')
 					.special-title.text-big.b Ваши преимущества
 					.special-item.special-item--inner
+						.special__close-btn.d-inline-block.d-lg-none ✖
 						.special-logo
 							+icon('advantages','special-icon')
 						.special-title.text-big.b Ваши преимущества
@@ -506,7 +513,7 @@ block content
 					.phone-block.mb-4.pt-5.b.text-big.text-accent
 						a(href="tel:+78002229575").phone-block--big 8 800 222 95 75
 						p Свяжитесь со специалистами нашей компании для получения консультации или оформления выплаты по этому телефону или оставьте заявку и наш менеджер свяжется с вами
-					.btn.md-trigger(data-modal='modal-2')
+					.btn.md-trigger.open-modal(data-modal='modal-2')
 						.phone-icon.mr-2: +icon('phone')
 						| Оставить заявку
 				.col-12.col-lg-6.d-flex.align-items-center.position-relative

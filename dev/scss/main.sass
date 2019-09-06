@@ -352,7 +352,8 @@ section
 	.svg-dashed
 		width: 108%
 		height: 108%
-		top: 0
+		top: 8%
+		left: -4%
 .svg-dashed
 	position: absolute
 	width: 86%
@@ -360,6 +361,11 @@ section
 	stroke: black
 	fill: transparent
 	stroke-width: 2px
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
 .svg-vector2
 	right: 7%
 	bottom: 7%
@@ -576,10 +582,6 @@ section
 	height: 100%!important
 .special
 	z-index: 300
-.special-item:hover, .info-item:hover
-	z-index: 200
-	.special-icon
-		fill: #fff
 .special-list
 	display: grid
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
@@ -598,18 +600,13 @@ section
 		perspective: 1300px
 		z-index: 300
 		pointer-events: none
-	&:hover
-		.special-wrapper
-			.special-desc
-				transform: rotate(0)
-				transition: transform .5s ease-out .25s
-		.special-item.special-item--inner
-			transform: scale(1)
-			opacity: 1
-			transition: all .5s ease-out
-			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
-		.special-title
-			color: #fff
+	
+.special__close-btn
+	right: 0
+	top: 0
+	padding: 10px
+	position: absolute
+	color: #fff
 .special-title
 	text-align: center
 	max-width: 160px

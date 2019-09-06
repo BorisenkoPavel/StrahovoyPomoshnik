@@ -25,6 +25,7 @@
     "gulp-replace": "1.0.0",
     "gulp-rsync": "0.0.8",
     "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.4.0",
     "gulp-svgmin": "^2.1.0",
     "gulp-terser": "^1.2.0",
